@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class TodoListScreen extends StatefulWidget {
+class ChatScreen extends StatefulWidget {
   @override
-  _TodoListScreenState createState() => _TodoListScreenState();
+  _ChatScreenState createState() => _ChatScreenState();
 }
 
-class _TodoListScreenState extends State<TodoListScreen> {
+class _ChatScreenState extends State<ChatScreen> {
   TextEditingController _controller;
 
   @override
