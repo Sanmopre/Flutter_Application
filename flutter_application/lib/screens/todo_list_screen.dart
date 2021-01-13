@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/screens/chat_screen.dart';
 
 class TodoListScreen extends StatefulWidget {
   @override
@@ -46,18 +47,14 @@ class _TodoListScreenState extends State<TodoListScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF229126),
-        title: Text('Todo List Firebase'),
+        title: Text('Task list:'),
         actions: [
           IconButton(
-            icon: Icon(Icons.delete_outline_outlined),
+            icon: Icon(Icons.chat_bubble),
             onPressed: () {
-              final batch = FirebaseFirestore.instance.batch();
-              for (var item in docs) {
-                if (item['done']) {
-                  batch.delete(todos.doc(item.id));
-                }
-              }
-              batch.commit();
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Chat_screen(),
+                  ));
             },
           ),
         ],
